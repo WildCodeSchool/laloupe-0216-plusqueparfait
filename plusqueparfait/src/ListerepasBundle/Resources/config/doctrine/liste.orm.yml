@@ -1,0 +1,29 @@
+ListerepasBundle\Entity\liste:
+    type: entity
+    table: null
+    repositoryClass: ListerepasBundle\Repository\listeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomRepas:
+            type: string
+            length: 255
+            column: nom_Repas
+        dateRepas:
+            type: datetime
+            unique: true
+            column: date_Repas
+        descriptionRepas:
+            type: text
+            nullable : true
+            column: description_Repas
+        inviteRepas:
+            type: string
+            length: 255
+            nullable: true
+            column: invite_Repas
+    lifecycleCallbacks: {  }

@@ -1,0 +1,7 @@
+listerepas_liste:
+    resource: "@ListerepasBundle/Resources/config/routing/liste.yml"
+    prefix:   /liste
+
+listerepas_homepage:
+    path:     /
+    defaults: { _controller: ListerepasBundle:Default:index }

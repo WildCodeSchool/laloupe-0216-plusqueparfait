@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>liste</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ liste.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomrepas</th>
+                <td>{{ liste.nomRepas }}</td>
+            </tr>
+            <tr>
+                <th>Daterepas</th>
+                <td>{% if liste.dateRepas %}{{ liste.dateRepas|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Descriptionrepas</th>
+                <td>{{ liste.descriptionRepas }}</td>
+            </tr>
+            <tr>
+                <th>Inviterepas</th>
+                <td>{{ liste.inviteRepas }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('liste_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('liste_edit', { 'id': liste.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
