@@ -1,0 +1,64 @@
+body{ /* Body principal */
+    background-color: #CDC8AA;
+    font-family: Raleway;
+    margin-top: 3px;
+}
+
+#caro_image { /* Logo du haut avec Caroline dessus */
+    width: 30%;
+    border-radius: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_menu { /* Div regroupant l'icône de la toque avec "Mes Repas" */
+    margin-top: 20px;
+}
+#iconetoque { /* Image de la toque de chef */
+    width: 5%;
+    display: inline;
+    margin-left: 7%;
+    margin-bottom: 20px;
+}
+h1 { /* Modifications sur "Mes Repas" */
+    font-size: 37px;
+    font-family: Raleway,Extra-Bold 800;
+    display: inline;
+}
+
+table { /* Tableau regroupant la liste des repas */
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+}
+
+th, td { /* Modifications sur les élements du tableau -- Bordure ajoutée pour visualiser dans un premier temps */
+    border: 1px solid black;
+}
+
+.colonne_nom { /* Alignement des noms de colonne sur le(s) tableau(x) */
+    text-align: center;
+}
+
+td { /* Espacer les textes de la marge de gauche, pour éviter que cela ne soit trop collé */
+    padding-left: 6px;
+}
+
+li { /* Modifications des boutons Bootstrap, et de la dernière colonne du tableau */
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 35px;
+    padding-top: 6px;
+}
+
+a { /* Modification de la couleur des liens */
+    color: white;
+}
+
+#creer_repas { /* Marge à gauche placée pour le bouton "Créer un nouveau repas" */
+    margin-left: 4.5%;
+}
+
+

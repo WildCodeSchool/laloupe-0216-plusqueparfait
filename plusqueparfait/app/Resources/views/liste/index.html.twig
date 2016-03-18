@@ -1,23 +1,32 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')  }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-theme.min.css')  }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/stylesheet.css')  }}" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+{% endblock %}
 
 {% block body %}
-    <h1>liste list</h1>
+    <img id="caro_image" src="{{ asset('assets/images/caro.png') }}" alt="caro" />
+    <div class="header_menu">
+        <img id="iconetoque" src="{{ asset('assets/images/iconetoque.png') }}" alt="iconetoque" />
+        <h1>Mes Repas</h1>
+    </div>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nomrepas</th>
-                <th>Daterepas</th>
-                <th>Descriptionrepas</th>
-                <th>Inviterepas</th>
-                <th>Actions</th>
+                <th class="colonne_nom">Thème du repas</th>
+                <th class="colonne_nom">Date prévue</th>
+                <th class="colonne_nom">Description</th>
+                <th class="colonne_nom">Mes invités</th>
+                <th class="colonne_nom">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for liste in listes %}
             <tr>
-                <td><a href="{{ path('liste_show', { 'id': liste.id }) }}">{{ liste.id }}</a></td>
                 <td>{{ liste.nomRepas }}</td>
                 <td>{% if liste.dateRepas %}{{ liste.dateRepas|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ liste.descriptionRepas }}</td>
@@ -25,10 +34,11 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('liste_show', { 'id': liste.id }) }}">show</a>
+
+                            <button type="button" class="btn btn-info glyphicon glyphicon-search"><a href="{{ path('liste_show', { 'id': liste.id }) }}">&nbsp;Afficher</a></button>
                         </li>
                         <li>
-                            <a href="{{ path('liste_edit', { 'id': liste.id }) }}">edit</a>
+                            <button type="button" class="btn btn-info glyphicon glyphicon-pencil"><a href="{{ path('liste_edit', { 'id': liste.id }) }}">&nbsp;Editer</a></button>
                         </li>
                     </ul>
                 </td>
@@ -38,8 +48,8 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('liste_new') }}">Create a new entry</a>
+        <li id="creer_repas">
+            <button type="button" class="btn btn-success"><a href="{{ path('liste_new') }}">Créer un nouveau repas</a></button>
         </li>
     </ul>
 {% endblock %}
